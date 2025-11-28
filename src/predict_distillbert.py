@@ -19,7 +19,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # 🔧 CONFIG
 # =========================================
 
-MODEL_DIR = "../models/distilbert_disneyland"
+MODEL_DIR = "djhua0103/distillbert_disneyland"
 MAX_LENGTH = 256
 
 
@@ -46,7 +46,6 @@ def normalize_branch(user_input: str):
     if "hong" in s or "hk" in s or "hongkong" in s:
         return "Disneyland_HongKong"
 
-    # default fallback: Invalid → return None
     return None
 
 
@@ -57,12 +56,10 @@ def normalize_branch(user_input: str):
 def load_model_and_tokenizer(model_dir: str = MODEL_DIR):
     """
     Load fine-tuned model + tokenizer.
+    Works with:
+      - local directory
+      - HuggingFace model ID (
     """
-    if not os.path.isdir(model_dir):
-        raise FileNotFoundError(
-            f"Model directory '{model_dir}' does not exist. "
-            f"Run train_distilbert.py first."
-        )
 
     print(f"Loading model from: {model_dir}")
 
@@ -75,6 +72,7 @@ def load_model_and_tokenizer(model_dir: str = MODEL_DIR):
 
     print(f"Using device: {device}")
     return tokenizer, model, device
+
 
 
 # =========================================
