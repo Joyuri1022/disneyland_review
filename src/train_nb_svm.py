@@ -36,50 +36,32 @@ from sklearn.metrics import (
 )
 
 
-def load_data(csv_path: str) -> pd.DataFrame:
+def load_data(csv_path: str):
     """
     Load the preprocessed dataset from CSV.
     """
     print(f"Loading data from: {csv_path}")
     df = pd.read_csv(csv_path)
 
+    # Converts sentiment into numerical labels
+    sentiment_map = {"neg": 0, "neu": 1, "pos": 2}
+    df["label"] = df["Sentiment"].map(sentiment_map)
 
-    return df
+    texts = df["Review_Text_clean"].astype(str).tolist()
+    labels = df["label"].astype(int).tolist()
+    return texts, labels
 
 
 def build_pipeline(model_type: str = "logreg") -> Pipeline:
-    """
-    Build a sklearn Pipeline that includes:
-    - ColumnTransformer:
-        * TF-IDF on 'Review_Text_clean'
-
-    - Classifier chosen by model_type:
-        'logreg' - Logistic Regression
-        'nb'     - Multinomial Naive Bayes
-        'svm'    - Linear SVM
-    """
-    text_col = "Review_Text_clean"
-
-
-    # Preprocess text column with TF-IDF
     text_transformer = TfidfVectorizer(
         max_features=20000,
         ngram_range=(1, 2),
         sublinear_tf=True
     )
 
-
-    # Combine into a ColumnTransformer
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ("text", text_transformer, text_col),
-        ]
-    )
-
     model_type = model_type.lower()
 
     if model_type == "logreg":
-        # Logistic Regression classifier (multiclass)
         clf = LogisticRegression(
             max_iter=1000,
             multi_class="multinomial",
@@ -91,80 +73,18 @@ def build_pipeline(model_type: str = "logreg") -> Pipeline:
         clf = MultinomialNB()
     elif model_type == "svm":
         clf = LinearSVC(class_weight="balanced")
+    else:
+        raise ValueError(f"Unknown model_type: {model_type}")
 
-    # Full pipeline
     pipe = Pipeline(
         steps=[
-            ("preprocess", preprocessor),
+            ("tfidf", text_transformer),
             ("clf", clf),
         ]
     )
 
     return pipe
 
-
-def train_and_evaluate(
-    df: pd.DataFrame,
-    model_type: str,
-    model_out: str,
-    test_size: float = 0.2,
-    random_state: int = 39
-):
-    """
-    Split the data, train the pipeline, evaluate on validation set,
-    and save the trained model.
-    """
-    # Features and target
-    X = df[["Review_Text_clean"]]
-    y = df["Rating"].astype(int)
-
-    # Train/validation split (stratified by rating)
-    X_train, X_val, y_train, y_val = train_test_split(
-        X,
-        y,
-        test_size=test_size,
-        random_state=random_state,
-        stratify=y,
-    )
-
-    print(f"Train size: {len(X_train)}, Validation size: {len(X_val)}")
-
-    # Build pipeline
-    model = build_pipeline(model_type=model_type)
-
-    # Fit
-    print(f"Training {model_type} model (TF-IDF)...")
-    if model_type.lower() == "nb":
-        # First compute sample weights based on class distribution
-        sample_weights = compute_sample_weight(class_weight="balanced", y=y_train)
-
-        model.fit(X_train, y_train, clf__sample_weight=sample_weights)
-    else:
-        model.fit(X_train, y_train)
-
-    # Evaluate
-    print("Evaluating on validation set...")
-    y_pred = model.predict(X_val)
-
-    acc = accuracy_score(y_val, y_pred)
-    f1_macro = f1_score(y_val, y_pred, average="macro")
-
-    print(f"\nValidation Accuracy: {acc:.4f}")
-    print(f"Validation F1-macro: {f1_macro:.4f}\n")
-
-    print("Classification Report:")
-    print(classification_report(y_val, y_pred))
-
-    print("Confusion Matrix:")
-    print(confusion_matrix(y_val, y_pred))
-
-    # Ensure output directory exists
-    os.makedirs(os.path.dirname(model_out), exist_ok=True)
-
-    # Save model
-    print(f"\nSaving trained model to: {model_out}")
-    joblib.dump(model, model_out)
-    print("Model saved.")
 
 
 def main():
@@ -208,16 +128,60 @@ def main():
 
     args = parser.parse_args()
 
-    df = load_data(args.input)
 
+    X, y = load_data(args.input)
 
-    train_and_evaluate(
-        df,
-        model_out=args.model_out,
-        model_type=args.model_type,
+    # Train/validation split (stratified by rating)
+    X_train, X_val, y_train, y_val = train_test_split(
+        X,
+        y,
         test_size=args.test_size,
         random_state=args.random_state,
+        stratify=y,
     )
+
+    print(f"Train size: {len(X_train)}, Validation size: {len(X_val)}")
+
+    model_type = args.model_type
+
+    # Build pipeline
+    model = build_pipeline(model_type=model_type)
+
+    # Fit
+    print(f"Training {model_type} model (TF-IDF)...")
+    if model_type.lower() == "nb":
+        # First compute sample weights based on class distribution
+        sample_weights = compute_sample_weight(class_weight="balanced", y=y_train)
+
+        model.fit(X_train, y_train, clf__sample_weight=sample_weights)
+    else:
+        model.fit(X_train, y_train)
+
+    # Evaluate
+    # print("Evaluating on validation set...")
+    y_pred = model.predict(X_val)
+
+    acc = accuracy_score(y_val, y_pred)
+    f1_macro = f1_score(y_val, y_pred, average="macro")
+
+    print(f"\nValidation Accuracy: {acc:.4f}")
+    print(f"Validation F1-macro: {f1_macro:.4f}\n")
+
+    print("Classification Report:")
+    print(classification_report(y_val, y_pred))
+
+    print("Confusion Matrix:")
+    print(confusion_matrix(y_val, y_pred))
+
+    model_out = args.model_out
+
+    # Ensure output directory exists
+    os.makedirs(os.path.dirname(model_out), exist_ok=True)
+
+    # Save model
+    print(f"\nSaving trained model to: {model_out}")
+    joblib.dump(model, model_out)
+    print("Model saved.")
 
 
 if __name__ == "__main__":
