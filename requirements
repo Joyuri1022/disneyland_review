@@ -1,0 +1,9 @@
+streamlit>=1.35
+pandas
+numpy
+plotly
+scikit-learn
+joblib
+transformers>=4.40
+huggingface_hub
+torch
