@@ -25,7 +25,6 @@ st.markdown(
     button[aria-expanded="true"], button[aria-expanded="false"] {
         color: #f9fafb !important;
     }
-    /* 主按钮更亮一点，方便区分 */
     button[kind="primary"] {
         background-color: #4f46e5 !important;
         color: #f9fafb !important;

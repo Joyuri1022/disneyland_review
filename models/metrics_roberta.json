@@ -1,0 +1,13 @@
+{
+  "model_name": "roberta-base",
+  "output_dir": "../models\\roberta-base_weighted",
+  "eval_loss": 0.3844449818134308,
+  "eval_accuracy": 0.8818565400843882,
+  "eval_f1_macro": 0.72777764586182,
+  "target_names": [
+    "neg",
+    "neu",
+    "pos"
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n         neg     0.6924    0.7048    0.6986       725\n         neu     0.5405    0.5225    0.5313      1022\n         pos     0.9520    0.9549    0.9534      6785\n\n    accuracy                         0.8819      8532\n   macro avg     0.7283    0.7274    0.7278      8532\nweighted avg     0.8806    0.8819    0.8812      8532\n"
+}
