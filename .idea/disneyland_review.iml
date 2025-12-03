@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/models/deberta_disneyland" />
+      <excludeFolder url="file://$MODULE_DIR$/models/deberta_disneyland_fl" />
+      <excludeFolder url="file://$MODULE_DIR$/models/deberta_v3_base_disneyland" />
+      <excludeFolder url="file://$MODULE_DIR$/models/distilbert_disneyland_sentiment" />
+      <excludeFolder url="file://$MODULE_DIR$/models/distillbert_disneyland" />
+      <excludeFolder url="file://$MODULE_DIR$/models/roberta-base_weighted" />
+    </content>
     <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

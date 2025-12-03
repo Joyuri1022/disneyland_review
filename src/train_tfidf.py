@@ -3,7 +3,12 @@
 
 """
 Train a TF-IDF + Logistic Regression baseline model
-for Disneyland review rating prediction (1–5 stars).
+for Disneyland review sentiment prediction (negative / neutral / positive).
+
+Original 1–5 star ratings are mapped to:
+    1–2 -> negative
+    3   -> neutral
+    4–5 -> positive
 
 Input: a preprocessed CSV created by preprocess.py
        (must contain columns:
@@ -12,6 +17,8 @@ Input: a preprocessed CSV created by preprocess.py
 Output:
   - Prints evaluation metrics on a validation set
   - Saves a trained sklearn Pipeline (preprocessing + classifier)
+    together with evaluation metrics in a joblib file:
+        {"model": pipeline, "metrics": {...}}
 """
 
 import os
@@ -62,6 +69,21 @@ def load_data(csv_path: str) -> pd.DataFrame:
     return df
 
 
+def map_rating_to_sentiment(r: int) -> str:
+    """
+    Map original 1–5 rating to sentiment label:
+        1–2 -> "negative"
+        3   -> "neutral"
+        4–5 -> "positive"
+    """
+    if r <= 2:
+        return "negative"
+    elif r == 3:
+        return "neutral"
+    else:
+        return "positive"
+
+
 def build_pipeline() -> Pipeline:
     """
     Build a sklearn Pipeline that includes:
@@ -94,10 +116,10 @@ def build_pipeline() -> Pipeline:
         ]
     )
 
-    # Logistic Regression classifier (multiclass)
+    # Logistic Regression classifier (multiclass over 3 sentiment labels)
     clf = LogisticRegression(
-        max_iter=1000,
-        multi_class="multinomial",
+        max_iter=2000,
+
         solver="lbfgs",
         class_weight="balanced",
         n_jobs=-1
@@ -122,9 +144,9 @@ def train_and_evaluate(
 ):
     """
     Split the data, train the pipeline, evaluate on validation set,
-    and save the trained model.
+    and save the trained model together with metrics.
     """
-    # Features and target
+    # Features
     X = df[
         [
             "Review_Text_clean",
@@ -134,9 +156,12 @@ def train_and_evaluate(
             "Month",
         ]
     ]
-    y = df["Rating"].astype(int)
 
-    # Train/validation split (stratified by rating)
+    # Map original 1–5 ratings to sentiment labels
+    ratings = df["Rating"].astype(int)
+    y = ratings.apply(map_rating_to_sentiment)
+
+    # Train/validation split (stratified by sentiment label)
     X_train, X_val, y_train, y_val = train_test_split(
         X,
         y,
@@ -151,7 +176,7 @@ def train_and_evaluate(
     model = build_pipeline()
 
     # Fit
-    print("Training Logistic Regression model (TF-IDF + metadata)...")
+    print("Training Logistic Regression model (TF-IDF + metadata, 3-class sentiment)...")
     model.fit(X_train, y_train)
 
     # Evaluate
@@ -165,24 +190,43 @@ def train_and_evaluate(
     print(f"Validation F1-macro: {f1_macro:.4f}\n")
 
     print("Classification Report:")
-    print(classification_report(y_val, y_pred))
+    report = classification_report(y_val, y_pred)
+    print(report)
 
     print("Confusion Matrix:")
-    print(confusion_matrix(y_val, y_pred))
+    cm = confusion_matrix(y_val, y_pred, labels=np.unique(y_val))
+    print(cm)
+
+    # Prepare metrics dict to be saved with the model
+    metrics = {
+        "accuracy": float(acc),
+        "f1_macro": float(f1_macro),
+        "classification_report": report,
+        "confusion_matrix": cm,
+        "labels": list(np.unique(y_val)),
+    }
 
     # Ensure output directory exists
-    os.makedirs(os.path.dirname(model_out), exist_ok=True)
+    out_dir = os.path.dirname(model_out)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
 
-    # Save model
-    print(f"\nSaving trained model to: {model_out}")
-    joblib.dump(model, model_out)
-    print("Model saved.")
+    # Save model + metrics
+    print(f"\nSaving trained model and metrics to: {model_out}")
+    joblib.dump(
+        {
+            "model": model,
+            "metrics": metrics,
+        },
+        model_out,
+    )
+    print("Model and metrics saved.")
 
 
 def main():
 
     parser = argparse.ArgumentParser(
-        description="Train TF-IDF + Logistic Regression model for Disneyland ratings."
+        description="Train TF-IDF + Logistic Regression model for Disneyland sentiment (neg/neu/pos)."
     )
     parser.add_argument(
         "--input",
@@ -194,7 +238,7 @@ def main():
         "--model_out",
         type=str,
         default="../models/tfidf_logreg.joblib",
-        help="Path to save the trained model pipeline.",
+        help="Path to save the trained model pipeline and metrics.",
     )
     parser.add_argument(
         "--test_size",
