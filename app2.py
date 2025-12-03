@@ -129,6 +129,14 @@ with tab_overview:
             plot_bgcolor=DARK_BG,
             paper_bgcolor=DARK_BG,
             font=dict(color=FONT_COLOR),
+
+            title=dict(font=dict(color=FONT_COLOR)),
+            legend=dict(
+                title=dict(font=dict(color=FONT_COLOR)),
+                font=dict(color=FONT_COLOR),
+            ),
+            xaxis=dict(title=dict(font=dict(color=FONT_COLOR))),
+            yaxis=dict(title=dict(font=dict(color=FONT_COLOR))),
         )
         st.plotly_chart(fig_line, use_container_width=True)
 
@@ -149,6 +157,14 @@ with tab_overview:
             plot_bgcolor=DARK_BG,
             paper_bgcolor=DARK_BG,
             font=dict(color=FONT_COLOR),
+
+            title=dict(font=dict(color=FONT_COLOR)),
+            legend=dict(
+                title=dict(font=dict(color=FONT_COLOR)),
+                font=dict(color=FONT_COLOR),
+            ),
+            xaxis=dict(title=dict(font=dict(color=FONT_COLOR))),
+            yaxis=dict(title=dict(font=dict(color=FONT_COLOR))),
         )
         st.plotly_chart(fig_hist, use_container_width=True)
 
