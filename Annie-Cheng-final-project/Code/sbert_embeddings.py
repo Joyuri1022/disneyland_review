@@ -45,7 +45,7 @@ X_train, X_val, y_train, y_val = train_test_split(
 print(f"Training size: {len(X_train)}, Validation size: {len(X_val)}")
 
 
-# ---------------- 2. SBERT FINE-TUNING STAGE ----------------
+# ============= SBERT FINE-TUNING STAGE ===================
 
 # Convert training data into SBERT InputExample format
 train_examples = [
@@ -67,7 +67,7 @@ model.fit(
     epochs=EPOCHS,
     warmup_steps=100,
     show_progress_bar=True,
-    optimizer_params={'lr': 3e-5}, # Using your standard LR
+    optimizer_params={'lr': 3e-5},
 )
 
 # Save the fine-tuned SentenceTransformer model
