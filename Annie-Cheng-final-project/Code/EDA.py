@@ -1,9 +1,8 @@
-#%%
 import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
 import seaborn as sns
-#%%
+
 df = pd.read_csv("../data/review_clean.csv")
 
 
@@ -22,7 +21,8 @@ def classify_ratings(x):
 df["Sentiment"] = df["Rating"].apply(lambda x: classify_ratings(x))
 # df.to_csv("data/review_sentiment.csv", index=False)
 
-df = pd.read_csv("../data/review_sentiment.csv")
+
+df = pd.read_csv("data/review_sentiment.csv")
 
 sentiment_counts = df.Sentiment.value_counts()
 # Frequency Counts by Ratings
@@ -33,7 +33,7 @@ plt.ylabel('Count')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-#%%
+
 
 # Text Length
 df['text_length'] = df['Review_Text_clean'].str.len()
@@ -48,7 +48,7 @@ sns.boxplot(data=df, x="Sentiment", y="text_length")
 plt.title("Review Length by Sentiment")
 plt.show()
 
-#%%
+
 from sklearn.feature_extraction.text import CountVectorizer
 import pandas as pd
 
@@ -87,7 +87,7 @@ plt.title("Top 20 Trigrams")
 plt.xlabel("Count")
 plt.tight_layout()
 plt.show()
-#%%
+
 df["Review_Text_clean"] = df["Review_Text_clean"].apply(
     lambda x: " ".join([w for w in x.split() if len(w) > 2])
 )
@@ -95,9 +95,17 @@ df["Review_Text_clean"] = df["Review_Text_clean"].apply(
 custom_stopwords = {"disneyland", "disney", "park"}
 stopwords = STOPWORDS.union(custom_stopwords)
 
+
 # Generate WordCloud for each sentiment
 sentiments = ["pos", "neu", "neg"]
+
+name = {"pos": "Positive",
+        "neu": "Neutral",
+        "neg": "Negative"}
+
 for sent in sentiments:
+
+    sentiment_name = name[sent]
 
     # Filter reviews for specific sentiment
     reviews = df[df["Sentiment"] == sent]["Review_Text_clean"].astype(str).values
@@ -115,12 +123,13 @@ for sent in sentiments:
 
     # Plot
     plt.figure(figsize=(10,6))
-    plt.title(f"{sent} Tweets - Wordcloud")
+    plt.title(f"{name[sent]} Reviews - Wordcloud")
+
     plt.imshow(positive_wordcloud, interpolation="bilinear")
     plt.axis("off")
     plt.show()
 
-#%%
+
 from collections import Counter
 
 def top_words(df,sent, n=50):
