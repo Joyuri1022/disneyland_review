@@ -190,7 +190,7 @@ def train_and_evaluate(
     print(f"Validation F1-macro: {f1_macro:.4f}\n")
 
     print("Classification Report:")
-    report = classification_report(y_val, y_pred)
+    report = classification_report(y_val, y_pred, digits=4)
     print(report)
 
     print("Confusion Matrix:")
