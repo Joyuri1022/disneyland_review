@@ -53,6 +53,9 @@ CANDIDATE_MODELS = [
     "roberta-base",
 ]
 
+
+
+
 # ========== Data Preparation =================
 
 class ReviewsDataset(torch.utils.data.Dataset):
@@ -338,15 +341,15 @@ def main():
     # Alternative class weights  (not used in final model).
 
     # Compute smooth class weights (square root) from training labels
-    # class_counts = np.bincount(y_train, minlength=NUM_LABELS).astype(float)
-    # inv_freq = np.where(class_counts > 0, 1.0 / class_counts, 0.0)
-    # class_weights = np.sqrt(inv_freq)
-    # class_weights = class_weights / class_weights.mean()
+    class_counts = np.bincount(y_train, minlength=NUM_LABELS).astype(float)
+    inv_freq = np.where(class_counts > 0, 1.0 / class_counts, 0.0)
+    class_weights = np.sqrt(inv_freq)
+    class_weights = class_weights / class_weights.mean()
 
     # Define custom class weights
-    base_weights = np.array([1.0, 1.4, 0.8])
-    class_weights = base_weights / base_weights.mean()
-    class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
+    # base_weights = np.array([1.0, 1.4, 0.8])
+    # class_weights = base_weights / base_weights.mean()
+    # class_weights = torch.tensor(class_weights, dtype=torch.float32).to(device)
 
 
     for model_name in tqdm(CANDIDATE_MODELS, desc="Training models"):
