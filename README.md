@@ -52,7 +52,7 @@ code/
 │
 ├── app.py                      #  Experimental/alternative Streamlit application
 └── app2.py                     #  Our Final Streamlit version
-
+```
 
 🔐 Model Storage Strategy
 
