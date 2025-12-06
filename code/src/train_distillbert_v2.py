@@ -109,7 +109,7 @@ def main():
     EPOCHS = 3
     LR = 5e-5
     MODEL_NAME = "distilbert-base-uncased"
-    SEED = 42
+    SEED = 39
 
     set_seed(SEED)
     device = "cuda" if torch.cuda.is_available() else "cpu"
