@@ -1,9 +1,9 @@
-🎢 Disneyland Review Sentiment Analysis
+# 🎢 Disneyland Review Sentiment Analysis
 
 A Comparative Study of Classical ML, Sentence Embeddings, and Pretrained Transformers
 
 
-📌 Overview
+## 📌 Overview
 
 This project performs sentiment classification on Disneyland customer reviews using three major modeling approaches:
 
@@ -54,7 +54,7 @@ code/
 └── app2.py                     #  Our Final Streamlit version
 ```
 
-🔐 Model Storage Strategy
+## 🔐 Model Storage Strategy
 
 Classical ML models → stored locally under code/models/
 
@@ -63,7 +63,7 @@ SBERT-based and Transformer models  (DistilBERT, RoBERTa, DeBERTa, BERT) → sto
 Only metrics/checkpoints needed by Streamlit are saved locally
 
 
-📊 Dataset
+## 📊 Dataset
 
 The dataset contains Disneyland visitor reviews with the following fields:
 
@@ -84,7 +84,7 @@ neutral
 negative
 
 
-🔍 Exploratory Data Analysis
+## 🔍 Exploratory Data Analysis
 
 Run 02_EDA.py to generate:
 
@@ -106,7 +106,7 @@ Reviews count by branch
 
 
 
-🧹 Preprocessing Pipeline
+## 🧹 Preprocessing Pipeline
 
 Implemented in preprocess.py, including:
 
@@ -121,7 +121,7 @@ Splitting train/validation/test sets
 Handling class imbalance (class weights / weighted sampler)
 
 
-⚙️ Model Training Scripts
+## ⚙️ Model Training Scripts
 1. Classical Machine Learning
 
 Scripts:
@@ -182,7 +182,7 @@ train_deberta_fl.py (focal loss)
 All trained models are uploaded to Hugging Face and loaded during inference.
 
 
-🏆 Results Summary
+## 🏆 Results Summary
 
 All models perform strongly on the positive class.
 
@@ -195,7 +195,7 @@ Sentence embedding models rank second.
 Classical ML models perform the weakest due to limited expressive power.
 
 
-💡 Streamlit Demo
+## 💡 Streamlit Demo
 
 Run the application:
 
