@@ -15,7 +15,7 @@ Pretrained Transformers (DistilBERT, BERT, RoBERTa, DeBERTa)
 
 The goal is to evaluate how different NLP methods perform on imbalanced sentiment data and identify which approach generalizes best across positive, neutral, and negative classes.
 
-A Streamlit application (app.py) is also included for interactive visualization and model inference.
+A Streamlit application (app2.py) is also included for interactive visualization and model inference.
 
 
 ## 📂 Project Structure
