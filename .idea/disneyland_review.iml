@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/models/distilbert_disneyland_sentiment" />
       <excludeFolder url="file://$MODULE_DIR$/models/distillbert_disneyland" />
       <excludeFolder url="file://$MODULE_DIR$/models/roberta-base_weighted" />
+      <excludeFolder url="file://$MODULE_DIR$/Annie-Cheng-individual-project" />
       <excludeFolder url="file://$MODULE_DIR$/code/models/deberta_disneyland" />
       <excludeFolder url="file://$MODULE_DIR$/code/models/deberta_disneyland_fl" />
       <excludeFolder url="file://$MODULE_DIR$/code/models/deberta_v3_base_disneyland" />
