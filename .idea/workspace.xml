@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a198c9f8-78df-41bd-bb9e-e4a84ca5df77" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/disneyland_review.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/disneyland_review.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/EDA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/bert_roberta.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/nb_svm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/roberta_experiment.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_embeddings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_lightgbm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_logreg.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/setfit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/review_clean.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/review_raw.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/review_sentiment.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/val.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/metrics_roberta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tfidf_logreg.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tfidf_nb.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tfidf_svm.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/02_EDA.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predict_distillbert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/predict_tfidf.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocess.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_bert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_deberta.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_deberta_base.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_deberta_fl.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_distillbert.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_distillbert_v2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_distillbert_v3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_nb_svm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_roberta_final.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_roberta_metrics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_sbert_embeddings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_sbert_lightgbm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/train_tfidf.py" beforeDir="false" />
-    </list>
+    <list default="true" id="a198c9f8-78df-41bd-bb9e-e4a84ca5df77" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +96,7 @@
       <workItem from="1764790909343" duration="7006000" />
       <workItem from="1764803307036" duration="4904000" />
       <workItem from="1764973778363" duration="2195000" />
-      <workItem from="1764977698760" duration="1779000" />
+      <workItem from="1764977698760" duration="2086000" />
     </task>
     <task id="LOCAL-00001" summary="raw dataset">
       <option name="closed" value="true" />
