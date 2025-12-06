@@ -107,7 +107,6 @@ class ReviewsDataset(torch.utils.data.Dataset):
 class WeightedTrainer(Trainer):
     def __init__(self, class_weights=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # 不提前搬到 GPU，避免 DDP / 设备切换问题，按 step 动态搬
         self.class_weights = class_weights
 
     def compute_loss(
@@ -115,7 +114,7 @@ class WeightedTrainer(Trainer):
         model,
         inputs,
         return_outputs: bool = False,
-        num_items_in_batch: int | None = None,  # 关键是把这个参数加上
+        num_items_in_batch: int | None = None,
     ):
         """
         We ignore num_items_in_batch, but we must accept it,

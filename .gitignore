@@ -206,5 +206,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-models/distilbert_disneyland/
+
+code/data/branch.py
+code/data/distribution.py
+
 

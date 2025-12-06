@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a198c9f8-78df-41bd-bb9e-e4a84ca5df77" name="Changes" comment="update">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/disneyland_review.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/disneyland_review.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/EDA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/bert_roberta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/nb_svm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/roberta_experiment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_embeddings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_lightgbm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/sbert_logreg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Annie-Cheng-final-project/Code/setfit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/review_clean.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/review_raw.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/review_sentiment.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/val.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/metrics_roberta.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/tfidf_logreg.joblib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/tfidf_nb.joblib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/tfidf_svm.joblib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/02_EDA.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/predict_distillbert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/predict_tfidf.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocess.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_bert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_deberta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_deberta_base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_deberta_fl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_distillbert.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_distillbert_v2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_distillbert_v3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_nb_svm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_roberta_final.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_roberta_metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_sbert_embeddings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_sbert_lightgbm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train_tfidf.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Joyuri1022&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Joyuri1022/disneyland_review.git&quot;,
+    &quot;accountId&quot;: &quot;7fae899a-2163-401d-a77d-5ef973918eb2&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3653lauKT03nkyJhX8Yri4KHbGl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.branch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.class_check.executor&quot;: &quot;Run&quot;,
+    &quot;Python.distribution.executor&quot;: &quot;Run&quot;,
+    &quot;Python.encode_test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.read_jl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_deberta.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_deberta_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_deberta_fl.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_distillbert_v2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_distillbert_v3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.train_tfidf.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\junhu\\AppData\\Roaming\\JetBrains\\PyCharm2025.2\\plugins\\Shell Script\\shellcheck.exe&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GWU/disneyland_review&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GWU\disneyland_review\code\data" />
+      <recent name="D:\GWU\disneyland_review" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
+        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a198c9f8-78df-41bd-bb9e-e4a84ca5df77" name="Changes" comment="" />
+      <created>1764282758874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764282758874</updated>
+      <workItem from="1764282761042" duration="8452000" />
+      <workItem from="1764544722509" duration="11113000" />
+      <workItem from="1764624457944" duration="599000" />
+      <workItem from="1764717015692" duration="10324000" />
+      <workItem from="1764790909343" duration="7006000" />
+      <workItem from="1764803307036" duration="4904000" />
+      <workItem from="1764973778363" duration="2195000" />
+      <workItem from="1764977698760" duration="1779000" />
+    </task>
+    <task id="LOCAL-00001" summary="raw dataset">
+      <option name="closed" value="true" />
+      <created>1764282910231</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764282910231</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1764288156590</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764288156590</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <option name="closed" value="true" />
+      <created>1764288344279</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764288344279</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1764727941307</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764727941307</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update">
+      <option name="closed" value="true" />
+      <created>1764728133722</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764728133722</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update">
+      <option name="closed" value="true" />
+      <created>1764728395916</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1764728395916</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update">
+      <option name="closed" value="true" />
+      <created>1764803504836</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764803504836</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="raw dataset" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/disneyland_review$train_distillbert_v2.coverage" NAME="train_distillbert_v2 Coverage Results" MODIFIED="1764545780588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/disneyland_review$class_check.coverage" NAME="class_check Coverage Results" MODIFIED="1764546914302" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/disneyland_review$distribution.coverage" NAME="distribution Coverage Results" MODIFIED="1764975569680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/disneyland_review$train_deberta_fl.coverage" NAME="train_deberta_fl Coverage Results" MODIFIED="1764549887364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/disneyland_review$train_deberta.coverage" NAME="train_deberta Coverage Results" MODIFIED="1764548340743" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/disneyland_review$train_deberta_base.coverage" NAME="train_deberta_base Coverage Results" MODIFIED="1764567792662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/disneyland_review$train_distillbert_v3.coverage" NAME="train_distillbert_v3 Coverage Results" MODIFIED="1764546028941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/disneyland_review$read_jl.coverage" NAME="read_jl Coverage Results" MODIFIED="1764791022265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/disneyland_review$branch.coverage" NAME="branch Coverage Results" MODIFIED="1764976060740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/disneyland_review$encode_test.coverage" NAME="encode_test Coverage Results" MODIFIED="1764283647920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/disneyland_review$train_tfidf.coverage" NAME="train_tfidf Coverage Results" MODIFIED="1764791218511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+  </component>
+</project>
